@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,21 +10,36 @@
       type="image/x-icon"
     />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
+      .login-container {
         display: flex;
+        justify-content: flex-end;
+      }
+      .login {
+        border-radius: 100px;
+        background: #0b57d0;
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px 20px;
+        text-align: center;
+        margin-top: 5px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+      }
+      .login:hover {
+        cursor: pointer;
+        background-color: #1a73e8;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        text-align: center;
       }
       .icon {
         width: 100px;
         height: 100px;
-        margin-bottom: 20px;
+        margin: 175px 0px 20px 0px;
       }
       .word {
         font-size: 24px;
@@ -37,36 +52,49 @@
         margin-bottom: 20px;
       }
       .refresh {
-        background-color: #4285f4;
+        background-color: #0b57d0;
         font-weight: bold;
         padding: 10px 20px;
         color: white;
         font-size: 14px;
         border-radius: 5px;
-        cursor: pointer;
         border: none;
+        text-decoration: none;
       }
       .refresh:hover {
         background-color: #357ae8;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <div>
-      <img
-        class="icon"
-        src="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
-        alt="Google Map Icon"
-      />
-      <div class="word">Google Map</div>
-      <div class="message">抱歉，目前伺服器已過載，請稍後再重試</div>
-      <button class="refresh" id="re">重新整理</button>
+      <div class="login-container">
+        <a
+          href="https://accounts.google.com/"
+          title="Google Accounts"
+          class="login"
+          >登入</a
+        >
+      </div>
+      <div class="container">
+        <img
+          class="icon"
+          src="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
+          alt="Google Map Icon"
+        />
+        <div class="word">Google Map</div>
+        <div class="message">
+          抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候
+        </div>
+        <a
+          href="https://www.google.com.tw/maps/"
+          title="Google Map"
+          role="button"
+          class="refresh"
+          >重新整理</a
+        >
+      </div>
     </div>
   </body>
-  <script>
-    let refresh = document.getElementById("re");
-    refresh.onmousedown = () => {
-      window.location = "https://www.google.com.tw/maps/";
-    };
-  </script>
 </html>
