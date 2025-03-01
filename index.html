@@ -10,36 +10,23 @@
       type="image/x-icon"
     />
     <style>
-      .login-container {
+      body {
         display: flex;
-        justify-content: flex-end;
-      }
-      .login {
-        border-radius: 100px;
-        background: #0b57d0;
-        color: white;
-        font-size: 15px;
-        font-weight: 500;
-        padding: 10px 20px;
-        text-align: center;
-        margin-top: 5px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-      }
-      .login:hover {
-        cursor: pointer;
-        background-color: #1a73e8;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
       .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
       }
       .icon {
         width: 100px;
         height: 100px;
-        margin: 175px 0px 20px 0px;
       }
       .word {
         font-size: 24px;
@@ -68,33 +55,33 @@
     </style>
   </head>
   <body>
-    <div>
-      <div class="login-container">
-        <a
-          href="https://accounts.google.com/"
-          title="Google Accounts"
-          class="login"
-          >登入</a
-        >
+    <div class="container">
+      <img
+        class="icon"
+        src="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
+        alt="Google Map Icon"
+      />
+      <div class="word">Google Map</div>
+      <div class="message">
+        抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候</br><span id="time">10</span>秒後為您跳轉至Google主頁
       </div>
-      <div class="container">
-        <img
-          class="icon"
-          src="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
-          alt="Google Map Icon"
-        />
-        <div class="word">Google Map</div>
-        <div class="message">
-          抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候
-        </div>
-        <a
-          href="https://www.google.com.tw/maps/"
-          title="Google Map"
-          role="button"
-          class="refresh"
-          >重新整理</a
-        >
-      </div>
+      <a
+        href="https://www.google.com.tw/maps/"
+        title="Google Map"
+        role="button"
+        class="refresh"
+        >重新整理</a
+      >
     </div>
+    <script>
+      let countdown = 9;
+      let time = setInterval(() => {
+        document.getElementById("time").innerText = countdown;
+        countdown--;
+        if(countdown == 0) {
+          //window.location = "https://www.google.com.tw/";
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
