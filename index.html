@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Map</title>
+    <link
+      rel="icon"
+      href="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+      .icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+      }
+      .word {
+        font-size: 24px;
+        color: black;
+        margin-bottom: 20px;
+      }
+      .message {
+        font-size: 16px;
+        color: gray;
+        margin-bottom: 20px;
+      }
+      .refresh {
+        background-color: #4285f4;
+        font-weight: bold;
+        padding: 10px 20px;
+        color: white;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+      }
+      .refresh:hover {
+        background-color: #357ae8;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img
+        class="icon"
+        src="https://lh3.googleusercontent.com/V0Lu6YzAVaCVcjSJ_4Qb0mR_idw-GApETGbkodvDKTH-rpDvHuD6J84jshR_FvXdl5mJxqbIHVdebYCCbQMJNxIxRaIHYFSq6z7laA"
+        alt="Google Map Icon"
+      />
+      <div class="word">Google Map</div>
+      <div class="message">抱歉，目前伺服器已過載，請稍後再重試</div>
+      <button class="refresh" id="re">重新整理</button>
+    </div>
+  </body>
+  <script>
+    let refresh = document.getElementById("re");
+    refresh.onmousedown = () => {
+      window.location = "https://www.google.com.tw/maps/";
+    };
+  </script>
+</html>
