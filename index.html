@@ -63,25 +63,38 @@
       />
       <div class="word">Google Map</div>
       <div class="message">
-        抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候</br><span id="time">10</span>秒後為您跳轉至Google主頁
+        抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候</br><span id="time"></span>秒後為您跳轉至Google主頁
       </div>
       <a
         href="https://www.google.com.tw/maps/"
         title="Google Map"
         role="button"
-        class="refresh"
+        class="refresh" 
+        id="map"
         >重新整理</a
       >
     </div>
     <script>
-      let countdown = 9;
+      let countdown = 5;
+      document.getElementById("time").innerText = countdown;
+
       let time = setInterval(() => {
-        document.getElementById("time").innerText = countdown;
         countdown--;
-        if(countdown == 0) {
+        document.getElementById("time").innerText = countdown;
+        if (countdown == 0) {
+          countdown = 6;
           window.location = "https://www.google.com.tw/";
         }
       }, 1000);
+
+      document.getElementById("map").onclick = () => {
+        countdown = 6;
+        if (Math.random() > 0.5) {
+          window.location = "https://www.google.com.tw/maps/";
+        } else {
+          window.location = "https://wtommi.github.io/Assignment-1-Waiting-Page/";
+        }
+      };
     </script>
   </body>
 </html>
