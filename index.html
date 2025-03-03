@@ -16,14 +16,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        opacity: 0;
-        transition: opacity 0.5s;
       }
-
-      body.loaded {
-        opacity: 1;
-      }
-
       .container {
         display: flex;
         flex-direction: column;
@@ -34,6 +27,7 @@
       .icon {
         width: 100px;
         height: 100px;
+        margin-bottom: 20px;
       }
       .word {
         font-size: 24px;
@@ -59,6 +53,25 @@
         background-color: #357ae8;
         cursor: pointer;
       }
+
+      .loading {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #0b57d0;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -72,16 +85,17 @@
       <div class="message">
         抱歉，系統目前無法運作，請稍後再試，感謝您的耐心等候</br><span id="time">5</span>秒後為您跳轉至Google主頁
       </div>
+      <div class="loading"></div>
       <a
-        href="https://www.google.com.tw/maps/"
-        title="Google Map"
+        href="https://www.google.com.tw/"
+        title="Google"
         role="button"
         class="refresh" 
-        id="map"
-        >重新整理</a
+        id="google"
+        >前往</a
       >
     </div>
-    <script>
+    <script> 
       let countdown = Number(document.getElementById("time").innerText);
       
       let time = setInterval(() => {
@@ -97,13 +111,13 @@
         document.getElementById("time").innerText = countdown;
       });
 
-      document.getElementById("map").onclick = () => {
+      document.getElementById("google").onclick = () => {
         if (Math.random() > 0.5) {
           window.location = "https://www.google.com.tw/maps/";
         } else {
           window.location = "https://wtommi.github.io/Assignment-1-Waiting-Page/";
         }
-      };
+      }; 
     </script>
   </body>
 </html>
